@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f5ef" />
+  <meta name="description" content="BOOP — a dog hotel portfolio concept in New York. Explore day care, overnight stays and a gentle introduction tailored to your dog." />
+  <title>BOOP — Dog Hotel Concept in New York</title>
+  <link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" sizes="180x180" />
+  <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="styles/site.css" />
+  <script>
+    // Desktop only: keep first-paint font and marquee initialization stable.
+    if (matchMedia('(min-width: 1201px) and (hover: hover) and (pointer: fine)').matches) {
+      const root = document.documentElement;
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) root.classList.add('desktop-marquee-initial');
+      if (document.fonts) {
+        root.classList.add('desktop-font-pending');
+        const showHero = () => root.classList.remove('desktop-font-pending');
+        const fallback = setTimeout(showHero, 3000);
+        Promise.all([500, 600, 700].map(weight => document.fonts.load(`${weight} 32px Unbounded`, 'While you’re away, they feel at home.')))
+          .then(() => { clearTimeout(fallback); showHero(); }, () => { clearTimeout(fallback); showHero(); });
+      }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to content</a>
+  <div class="header-wrap">
+    <header class="header">
+      <a class="brand" href="#top" aria-label="BOOP — home">
+        <span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/logos/pesvit-brand-paw.svg#mark"/></svg></span>
+        <span><span class="brand-name"><svg class="brand-wordmark" width="72" height="21" aria-hidden="true" viewBox="0 0 489 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M314.801 0.206055C356.577 0.425967 376.133 33.4101 375.864 71.9629C375.566 114.971 360.445 141.944 314.191 141.948C298.93 142.017 282.051 136.105 270.329 126.431C257.858 116.136 249.199 100.663 247.602 84.4453C245.517 64.9925 250.753 47.6914 260.492 31.0439C271.406 12.3827 287.927 2.75618 309.264 0.421875C310.55 0.155971 313.432 0.204352 314.801 0.206055ZM291.611 25.3457C290.972 25.1683 289.504 25.2518 288.83 25.2852C284.857 25.9054 281.324 27.6323 279.107 30.9658C272.035 41.607 276.914 51.9493 286.678 58.418C292.902 62.5402 296.587 63.4721 303.727 63.2588C308.43 62.4885 310.331 61.1824 313.182 57.4639C324.6 42.5684 304.182 28.8434 291.611 25.3457Z" fill="currentColor"/>
+<path d="M178.515 0.207031C219.91 0.0111368 240.264 34.6705 239.742 72.502C239.155 114.827 223.453 141.847 178.389 141.95C163.516 142.05 146.462 136.597 134.842 127.278C121.599 116.797 113.142 101.414 111.386 84.6113C109.016 62.7608 116.342 39.3087 130.129 22.2539C140.816 9.03346 156.044 2.21364 172.704 0.420898C174.022 0.146533 177.089 0.213761 178.515 0.207031ZM208.676 30.458C206.06 27.9622 201.165 25.8755 197.506 26.2744C189.494 27.9458 179.832 34.1552 175.198 40.8799C170.021 48.3921 173.861 54.7126 180.714 58.9697C183.732 60.8445 186.117 61.2779 189.645 61.376C197.251 61.245 202.583 58.4951 208.025 53.248C214.57 46.939 215.575 36.8879 208.676 30.458Z" fill="currentColor"/>
+<path d="M32.4255 0.419922C38.1317 -0.774215 50.0734 0.828479 55.9207 2.10742C66.9098 4.51118 75.6095 8.96421 81.9929 18.4482C91.2897 32.2605 91.4422 57.4371 75.9812 66.8896C87.4022 67.8795 96.4382 73.9264 100.861 84.6074C109.676 105.896 106.728 128.006 83.9763 138.212C77.959 140.652 71.8449 140.004 65.4519 140.005L42.364 139.999L22.2703 140.023C18.761 140.031 14.7561 140.189 11.3025 139.892C4.85013 139.336 2.70755 130.961 2.19409 125.729C1.30656 116.685 1.79662 107.58 2.1394 98.543C2.60659 88.4833 2.79891 78.4129 2.71655 68.3428C2.6409 62.5809 2.36696 56.8228 1.89526 51.0801C1.18453 42.6767 0.115093 34.4186 0.885498 25.9727C2.50708 8.1945 16.8939 2.10441 32.4255 0.419922ZM69.1013 101.311C66.7587 94.8122 55.6016 91.497 49.3826 92.2178C34.0074 97.1041 41.532 117.762 61.2 113.099C64.4162 111.965 67.2875 110.213 68.8142 107.006C69.6665 105.222 69.7699 103.171 69.1013 101.311ZM56.2312 27.6094C53.7973 25.4533 49.1292 24.2676 45.8445 24.5635C42.135 24.8952 39.3158 25.7046 36.7751 28.7295C35.0886 30.7135 34.2772 33.2972 34.5261 35.8896C35.2065 43.2884 42.1524 46.8544 48.9441 46.7676C58.8892 45.7514 64.3513 34.8022 56.2312 27.6094Z" fill="currentColor"/>
+<path d="M426.315 0.193359C439.122 -0.102358 448.323 -0.0609643 460.836 3.97852C487.681 12.6466 492.823 39.4232 485.208 63.8877C482.313 73.1924 478.999 78.0517 472.344 84.8975C459.227 98.3899 442.452 96.0835 425.67 92.4941C419.387 91.1101 414.825 89.3505 415.412 97.8281C415.894 104.82 417.745 108.875 420.979 114.973C423.531 119.355 426.073 123.809 428.297 128.376C429.581 131.007 430.675 135.778 428.424 138.216C427.029 139.727 424.424 140.021 422.458 140.032C415.752 140.07 409.02 139.978 402.311 139.976C399.254 139.864 395.935 140.291 392.91 139.953C388.323 139.44 386.407 133.478 385.877 129.726C385.047 123.837 385.23 117.769 385.397 111.872C385.636 103.362 386.128 94.8621 386.87 86.3818C387.561 78.1223 388.514 69.3425 388.596 61.0977C388.646 55.9062 388.867 49.648 388.474 44.5703C387.917 39.1461 387.121 33.8445 386.823 28.3906C385.574 5.59878 408.026 0.647566 426.315 0.193359ZM454.747 50.8037C459.692 36.0233 443.823 31.7766 432.8 32.791C426.817 34.3998 426.001 37.6796 425.984 43.3564C425.949 56.8964 434.955 60.7692 446.911 57.209C447.03 57.1737 447.149 57.1379 447.266 57.1006C450.179 55.9689 453.694 53.9446 454.747 50.8037Z" fill="currentColor"/>
+</svg>
+</span></span>
+      </a>
+      <nav class="nav" id="siteNav" aria-label="Main navigation">
+        <a href="#services">Services & prices</a>
+        <a href="#stay">Your dog's stay</a>
+        <a href="#team">Team & reviews</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-primary" href="#contact">Check dates <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-controls="siteNav" aria-label="Open menu" aria-expanded="false"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><use href="assets/icons/ui-sprite.svg#menu"/></svg></button>
+    </header>
+  </div>
+
+  <main id="top" tabindex="-1">
+    <div class="hero-scroll-track">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-frames" aria-hidden="true">
+        <div class="hero-frame hero-frame--1"><picture><source media="(max-width: 600px) and (max-aspect-ratio: 2/3)" srcset="assets/images/hero/dogs-playing-mobile.webp" /><img class="hero-photo" src="assets/images/hero/dogs-playing.webp" alt="" width="1920" height="900" loading="eager" decoding="async" fetchpriority="high" /></picture></div>
+        <div class="hero-frame hero-frame--2"><img class="hero-photo" data-src="assets/images/hero/dog-with-rope-toy.webp" fetchpriority="low" alt="" width="1920" height="1280" loading="lazy" decoding="async" /></div>
+        <div class="hero-frame hero-frame--3"><img class="hero-photo" data-src="assets/images/hero/dogs-walking.webp" fetchpriority="low" alt="" width="1920" height="900" loading="lazy" decoding="async" /></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <span class="eyebrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/icons/ui-sprite.svg#location-pin"/></svg>New York</span>
+          <h1 id="heroTitle" aria-label="While you are away, they feel at home.">While you’re away,<br /><span aria-hidden="true">they feel at <span class="hero-home-word">h<svg class="heart-letter" viewBox="0 0 64 56" aria-hidden="true"><path d="M32 49C23 42 6 32 6 18C6 5 23 2 32 14C41 2 58 5 58 18C58 32 41 42 32 49Z" fill="none" stroke="currentColor" stroke-width="10" stroke-linejoin="round"/></svg>me.</span></span></h1>
+          <p>Get on with your day while your dog explores somewhere new, with caring people close by.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Check dates <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></a>
+            <a class="btn btn-hero-outline" href="#stay">How it works</a>
+          </div>
+        </div>
+      </div>
+        </section>
+
+    </div>
+    <div class="after-hero">
+    <div class="benefit-marquee-slot"><section class="benefit-marquee" aria-label="Stay highlights">
+      <div class="benefit-track" aria-hidden="true">
+        <div class="benefit-group">
+          <span class="benefit-item">Room to run and play<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">New scents and discoveries<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Good company for your dog<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Walks in the fresh air<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Nose-to-nose hellos<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Plenty to wag about<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">A little adventure every day<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+        </div>
+        <div class="benefit-group" aria-hidden="true">
+          <span class="benefit-item">Room to run and play<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">New scents and discoveries<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Good company for your dog<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Walks in the fresh air<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Nose-to-nose hellos<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Plenty to wag about<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">A little adventure every day<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+        </div>
+        <div class="benefit-group" aria-hidden="true">
+          <span class="benefit-item">Room to run and play<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">New scents and discoveries<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Good company for your dog<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Walks in the fresh air<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Nose-to-nose hellos<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">Plenty to wag about<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+          <span class="benefit-item">A little adventure every day<svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/icons/ui-sprite.svg#dog-bowl"/></svg></span>
+        </div>
+      </div>
+    </section></div>
+
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section-heading reveal"><span class="eyebrow">Services & prices</span><h2 class="section-title">Your plans. <br />Their kind of day.</h2><p>A few hours out, a night away or a longer trip — find the right stay for your dog.</p></div>
+        <div class="services-grid">
+          <article class="service-card glass-panel reveal" data-estimate-rate="450" data-estimate-unit="day"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#clock"/></svg></span><h3>Day care</h3><p>For work, meetings or errands your dog cannot join. Drop them off and collect them the same day.</p><div class="service-bottom"><span class="price">from ₴450<small>up to 6 hours</small></span><a class="text-link service-select" href="#contact" data-service="Day care">Choose <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></a></div></article>
+          <article class="service-card glass-panel reveal delay-1" data-estimate-rate="700" data-estimate-unit="night"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#moon-stars"/></svg></span><h3>Overnight stay</h3><p>For nights away from home. We will agree on drop-off and collection times with you in advance.</p><div class="service-bottom"><span class="price">from ₴700<small>per night</small></span><a class="text-link service-select" href="#contact" data-service="Overnight stay">Choose <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></a></div></article>
+          <article class="service-card glass-panel reveal delay-2"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#calendar"/></svg></span><h3>Longer stays</h3><p>For holidays, business trips and longer plans. Let us talk through how long your dog will stay.</p><div class="service-bottom"><span class="price">On request<small>depending on dates</small></span><a class="text-link service-select" href="#contact" data-service="Longer stays">Let's talk <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section stay" id="stay" aria-labelledby="stayTitle">
+      <div class="container">
+        <div class="stay-heading reveal">
+          <div><span class="eyebrow">Your dog's stay</span><h2 class="section-title" id="stayTitle">A new place.<br />A familiar rhythm.</h2></div>
+          <div class="stay-tabs" role="tablist" aria-label="Getting to know BOOP">
+            <button class="stay-tab" type="button" role="tab" id="stay-tab-habits" aria-controls="stay-panel-habits" aria-selected="true" tabindex="0">Habits</button>
+            <button class="stay-tab" type="button" role="tab" id="stay-tab-meet" aria-controls="stay-panel-meet" aria-selected="false" tabindex="-1">First hello</button>
+            <button class="stay-tab" type="button" role="tab" id="stay-tab-visit" aria-controls="stay-panel-visit" aria-selected="false" tabindex="-1">Stay</button>
+          </div>
+        </div>
+        <div class="stay-stage">
+          <div class="stay-slide is-active" id="stay-panel-habits" role="tabpanel" aria-labelledby="stay-tab-habits" tabindex="0" aria-hidden="false">
+            <div class="stay-visual stay-visual--habits" aria-hidden="true">
+              <div class="stay-orbit"></div>
+              <img class="stay-main-image" src="assets/images/stay/cocker-cutout.webp" alt="" width="1122" height="1402" loading="lazy" decoding="async" />
+              <div class="stay-note"><span class="stay-note-mark"><svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/logos/pesvit-brand-paw.svg#mark"/></svg></span><span>A familiar routine</span></div>
+              <div class="stay-tag"><span class="stay-tag-dot"></span>Favourite habits</div>
+            </div>
+            <div class="stay-content"><span class="stay-step">A personal approach</span><h3>Let's start with a chat</h3><p>Tell us about your dog's personality, food and habits. What makes them happy, and what unsettles them? Together, we will plan a comfortable stay.</p></div>
+          </div>
+          <div class="stay-slide" id="stay-panel-meet" role="tabpanel" aria-labelledby="stay-tab-meet" tabindex="0" aria-hidden="true" inert>
+            <div class="stay-visual stay-visual--meet" aria-hidden="true">
+              <div class="stay-orbit"></div>
+              <img class="stay-main-image" src="assets/images/stay/bull-terrier-cutout.webp" alt="" width="560" height="560" loading="lazy" decoding="async" />
+              <div class="stay-note"><span class="stay-note-mark"><svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/logos/pesvit-brand-paw.svg#mark"/></svg></span><span>New friendships</span></div>
+              <div class="stay-tag"><span class="stay-tag-dot"></span>At their own pace</div>
+            </div>
+            <div class="stay-content"><span class="stay-step">Someone close by</span><h3>No rush to settle in</h3><p>Your dog can explore, sniff around and meet the people caring for them. Every dog needs their own time to feel confident.</p></div>
+          </div>
+          <div class="stay-slide" id="stay-panel-visit" role="tabpanel" aria-labelledby="stay-tab-visit" tabindex="0" aria-hidden="true" inert>
+            <div class="stay-visual stay-visual--visit" aria-hidden="true">
+              <div class="stay-orbit"></div>
+              <img class="stay-main-image" src="assets/images/stay/schnauzer-cutout.webp" alt="" width="560" height="560" loading="lazy" decoding="async" />
+              <div class="stay-note"><span class="stay-note-mark"><svg viewBox="0 0 24 24" fill="currentColor"><use href="assets/logos/pesvit-brand-paw.svg#mark"/></svg></span><span>Time to unwind</span></div>
+              <div class="stay-tag"><span class="stay-tag-dot"></span>Walks and care</div>
+            </div>
+            <div class="stay-content"><span class="stay-step">Their usual rhythm</span><h3>Let's plan the details</h3><p>We will agree on dates, meals, walks and rest, keeping your dog's usual routine and individual needs in mind.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section care" aria-labelledby="careTitle">
+      <div class="container">
+        <div class="care-heading reveal">
+          <div><span class="eyebrow">A little piece of home</span><h2 class="section-title" id="careTitle">A little home.<br />In their bag.</h2></div>
+          <p>New place, familiar comforts. Bring a few everyday essentials to help your dog feel more at home.</p>
+        </div>
+        <div class="care-layout reveal">
+          <div class="care-photo-wrap"><video id="careVideo" class="care-photo care-video" muted loop playsinline preload="none" poster="assets/images/care/puppy-with-favourite-toy.webp" width="1280" height="676" aria-label="A playful puppy carrying a favourite stuffed toy"><source data-src="assets/videos/puppy-with-favourite-toy.mp4" type="video/mp4" /></video><span class="care-hearts" aria-hidden="true"><svg class="care-heart" viewBox="0 0 32 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 30C13 25 4 19 4 11C4 3 13 2 16 10C20 2 28 4 28 11C28 19 20 25 16 30Z"/></svg><svg class="care-heart" viewBox="0 0 32 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 30C13 25 4 19 4 11C4 3 13 2 16 10C20 2 28 4 28 11C28 19 20 25 16 30Z"/></svg><svg class="care-heart" viewBox="0 0 32 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 30C13 25 4 19 4 11C4 3 13 2 16 10C20 2 28 4 28 11C28 19 20 25 16 30Z"/></svg></span></div>
+          <div class="care-copy">
+            <ol class="pack-list">
+              <li><span class="pack-number" aria-hidden="true">01</span><div><h3>The usual menu</h3><p>Their regular food, a little extra and portion instructions.</p></div></li>
+              <li><span class="pack-number" aria-hidden="true">02</span><div><h3>Ready for a walk</h3><p>A lead, collar or harness with your contact details.</p></div></li>
+              <li><span class="pack-number" aria-hidden="true">03</span><div><h3>Something that smells like home</h3><p>A favourite toy, blanket or bed, if they need it.</p></div></li>
+              <li><span class="pack-number" aria-hidden="true">04</span><div><h3>The little details</h3><p>Written care instructions for any special routines or needs.</p></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="photo-gallery" aria-label="Life at BOOP" id="photoGallery">
+      <div class="container"><div class="section-heading"><span class="eyebrow">Life at BOOP</span><h2 class="section-title">Dog days. <br />Happy little moments.</h2><p>Wet noses, curious looks and funny first hellos. Little moments that make us reach for the camera.</p></div></div>
+      <div class="gallery-viewport"><div class="gallery-track"><div class="gallery-group"><figure class="gallery-frame"><img src="assets/images/gallery/dachshund-on-lap.webp" alt="A wire-haired dachshund sitting on a person’s lap" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/everyday-essentials.webp" alt="A ceramic dog bowl, brown collar, blanket and bone-shaped toy" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/dachshund-bubble-bath.webp" alt="A dachshund surrounded by bubbles in a bath" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/paws-on-green-bed.webp" alt="Grey dog paws resting on a soft green bed" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/playtime-at-home.webp" alt="A brown dog lying on its back and playing with a plush toy" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/cosy-companions.webp" alt="Two small dogs in knitted sweaters on a green chair" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/dachshund-in-carrier.webp" alt="A dachshund peeking out of a padded brown carrier" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/sage-harness.webp" alt="A curly-haired brown dog wearing a pale sage harness" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/french-bulldog-outing.webp" alt="A French bulldog wearing a cream shirt outdoors" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/floral-harness.webp" alt="A close-up of a floral harness on a long-haired brown dog" width="800" height="800" loading="lazy" decoding="async" /></figure></div><div class="gallery-group" aria-hidden="true"><figure class="gallery-frame"><img src="assets/images/gallery/dachshund-on-lap.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/everyday-essentials.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/dachshund-bubble-bath.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/paws-on-green-bed.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/playtime-at-home.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/cosy-companions.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/dachshund-in-carrier.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/sage-harness.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/french-bulldog-outing.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure><figure class="gallery-frame"><img src="assets/images/gallery/floral-harness.webp" alt="" width="800" height="800" loading="lazy" decoding="async" /></figure></div></div></div>
+    </section>
+
+    <section class="section team" id="team">
+      <div class="container">
+        <div class="team-intro reveal"><div><span class="eyebrow">Team & reviews</span><h2 class="section-title">Care is in <br /><span class="team-title-line">the little details.</span></h2></div><p>You should know who is looking after your friend. We stay in touch, share how they are settling in and talk through anything that needs attention.</p></div>
+        <div class="team-grid">
+          <article class="team-card reveal"><img src="assets/images/team/attentive-carer.jpg" alt="A carer checking a dog's harness before a walk" loading="lazy" /><div class="team-label"><span>Behind the scenes</span><strong>People who care about your dog.</strong></div></article>
+          <div class="reviews glass-panel reveal delay-1" role="region" aria-roledescription="review carousel" aria-label="Guest reviews">
+            <div class="review-controls"><button class="round-btn" id="prevReview" aria-label="Previous review"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/icons/ui-sprite.svg#arrow-left"/></svg></button><button class="round-btn" id="nextReview" aria-label="Next review"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></button></div>
+            <div class="review-slides"><div class="review-slide is-active" aria-hidden="false"><blockquote class="review-quote">“Bonya’s first night
+away from me. One sleepy
+photo after playtime —
+and I could finally relax.”</blockquote><div class="review-author"><img class="review-avatar" src="assets/images/reviews/olena.webp" width="44" height="44" alt="Olena — sample portrait" decoding="async" /><span><strong class="review-name">Olena</strong><span class="review-dog">Bonya&#x27;s owner</span></span></div></div><div class="review-slide" aria-hidden="true"><blockquote class="review-quote">“Ray is wary of new people.
+They let him take his time.
+When I came to collect him,
+he still wanted to play.”</blockquote><div class="review-author"><img class="review-avatar" src="assets/images/reviews/marko.webp" width="44" height="44" alt="Marko — sample portrait" decoding="async" /><span><strong class="review-name">Marko</strong><span class="review-dog">Ray&#x27;s owner</span></span></div></div><div class="review-slide" aria-hidden="true"><blockquote class="review-quote">“Luna is a fussy eater.
+I packed her usual food.
+That evening, the update:
+she had eaten every bite.”</blockquote><div class="review-author"><img class="review-avatar" src="assets/images/reviews/iryna.webp" width="44" height="44" alt="Iryna — sample portrait" decoding="async" /><span><strong class="review-name">Iryna</strong><span class="review-dog">Luna&#x27;s owner</span></span></div></div></div><div class="review-dots" aria-hidden="true"><i class="active"></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-aside reveal"><span class="eyebrow">FAQ</span><h2 class="section-title">Good to know <br />before you go.</h2><p>Documents, special needs and changes of plan — the details to discuss before arrival.</p></div>
+        <div class="faq-list reveal delay-1">
+          <div class="faq-item open"><button class="faq-question" aria-controls="faqAnswer1" aria-expanded="true">Which vaccinations and documents are needed? <span class="faq-plus">+</span></button><div class="faq-answer" id="faqAnswer1"><div><p>Please check vaccination and document requirements before confirming dates. Tell us your dog's age and ask what to prepare for their visit.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" aria-controls="faqAnswer2" aria-expanded="false">What if my dog misses me? <span class="faq-plus">+</span></button><div class="faq-answer" id="faqAnswer2"><div><p>Let us know how your dog usually handles time apart. If they struggle to settle in, we will contact you and agree on what to do next.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" aria-controls="faqAnswer3" aria-expanded="false">Are there any size or breed restrictions? <span class="faq-plus">+</span></button><div class="faq-answer" id="faqAnswer3"><div><p>Breed alone does not tell us whether a stay is suitable. Share your dog's age, behaviour and needs so we can discuss their visit individually.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" aria-controls="faqAnswer4" aria-expanded="false">Can my dog stay if they take medication? <span class="faq-plus">+</span></button><div class="faq-answer" id="faqAnswer4"><div><p>Please discuss this before booking. Share your vet's instructions and any care procedures so the team can confirm whether they can provide them.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" aria-controls="faqAnswer5" aria-expanded="false">What if my travel dates change? <span class="faq-plus">+</span></button><div class="faq-answer" id="faqAnswer5"><div><p>Contact us as soon as your plans change. We will check whether the stay can be moved or extended and explain the terms for your request.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" aria-controls="faqAnswer6" aria-expanded="false">How do I find out the total price? <span class="faq-plus">+</span></button><div class="faq-answer" id="faqAnswer6"><div><p>Day care and overnight stays show starting prices. We will confirm the total for your dog's stay before you finalise the booking.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal"><span class="eyebrow">Contact & booking</span><h2 class="section-title">Tell us about <br />your dog.</h2><p>Leave your contact details and preferred dates. If you are unsure which stay to choose, we will help you explore the options.</p>
+          <div class="contact-details">
+            <div class="contact-line"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#phone"/></svg></span><div><strong>Call us</strong><a href="tel:+12125550148">+1 (212) 555-0148</a></div></div>
+            <div class="contact-line"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#message-circle"/></svg></span><div><strong>Email us</strong><a href="mailto:hello@boop.example">hello@boop.example</a></div></div>
+            <div class="contact-line"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#location-pin"/></svg></span><div><strong>New York</strong><span>24 Maple Lane, New York, NY</span></div></div>
+          </div>
+        </div>
+        <div class="form-card glass-panel reveal delay-1">
+          <div id="bookingFormWrap"><h3 class="form-title">Send an enquiry</h3><p class="form-intro">Enter the details for your enquiry. Your information stays on this page and is not sent to the team.</p>
+            <form id="bookingForm" novalidate>
+              <div class="form-grid">
+                <div class="field"><label id="serviceLabel">What care do you need?</label><div class="service-picker"><input id="service" name="service" type="hidden" /><button class="select-trigger is-placeholder" id="serviceTrigger" type="button" role="combobox" aria-labelledby="serviceLabel serviceValue" aria-haspopup="listbox" aria-controls="serviceOptions" aria-expanded="false" aria-required="true" aria-invalid="false" aria-describedby="formError"><span id="serviceValue">Choose a stay</span></button><div class="select-menu" id="serviceOptions" role="listbox" aria-labelledby="serviceLabel" hidden><button class="select-option" type="button" role="option" data-value="Day care" aria-selected="false">Day care</button><button class="select-option" type="button" role="option" data-value="Overnight stay" aria-selected="false">Overnight stay</button><button class="select-option" type="button" role="option" data-value="Longer stays" aria-selected="false">Longer stays</button><button class="select-option" type="button" role="option" data-value="Help me choose" aria-selected="false">Help me choose</button></div></div></div>
+                <div class="field"><label for="dogName">Your dog's name</label><input id="dogName" name="dogName" placeholder="For example, Korzhyk" required /></div>
+                <div class="field"><label for="dateFromDisplay">Preferred start date</label><div class="date-control"><input class="date-display" id="dateFromDisplay" type="text" placeholder="dd.mm.yyyy" readonly aria-required="true" aria-invalid="false" aria-describedby="formError" /><input id="dateFrom" name="dateFrom" type="hidden" /><button class="date-trigger" type="button" data-open-calendar aria-haspopup="dialog" aria-controls="dateFromPicker" aria-expanded="false" aria-label="Choose a start date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#calendar-compact"/></svg></button><div class="date-picker" id="dateFromPicker" role="dialog" aria-label="Choose your preferred start date" hidden><div class="calendar-head"><span class="calendar-month" aria-live="polite"></span><div class="calendar-nav"><button type="button" data-prev-month aria-label="Previous month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#chevron-left"/></svg></button><button type="button" data-next-month aria-label="Next month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#chevron-right"/></svg></button></div></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div><div class="calendar-actions"><button type="button" data-clear-date>Clear</button><button type="button" data-today>Today</button></div></div></div></div>
+                <div class="field"><label for="dateToDisplay">End date</label><div class="date-control"><input class="date-display" id="dateToDisplay" type="text" placeholder="dd.mm.yyyy" readonly aria-invalid="false" /><input id="dateTo" name="dateTo" type="hidden" /><button class="date-trigger" type="button" data-open-calendar aria-haspopup="dialog" aria-controls="dateToPicker" aria-expanded="false" aria-label="Choose an end date"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#calendar-compact"/></svg></button><div class="date-picker" id="dateToPicker" role="dialog" aria-label="Choose your end date" hidden><div class="calendar-head"><span class="calendar-month" aria-live="polite"></span><div class="calendar-nav"><button type="button" data-prev-month aria-label="Previous month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#chevron-left"/></svg></button><button type="button" data-next-month aria-label="Next month"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="assets/icons/ui-sprite.svg#chevron-right"/></svg></button></div></div><div class="calendar-weekdays" aria-hidden="true"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span></div><div class="calendar-days"></div><div class="calendar-actions"><button type="button" data-clear-date>Clear</button><button type="button" data-today>Today</button></div></div></div></div>
+                <div class="field"><label for="ownerName">Your name</label><input id="ownerName" name="ownerName" autocomplete="name" placeholder="What should we call you?" required /></div>
+                <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+1 (212) 555-0100" required /></div>
+                <div class="field full"><label for="notes">What should we know about your dog?</label><textarea id="notes" name="notes" placeholder="Routine, food, habits or special needs — optional"></textarea></div>
+              </div>
+              <div class="consent"><input id="privacyConsent" type="checkbox" required aria-labelledby="privacyConsentText" /><span id="privacyConsentText"><label for="privacyConsent">By submitting my details, I agree to the</label> <button class="privacy-link" id="openPrivacy" type="button" aria-haspopup="dialog" aria-controls="privacyDialog">Privacy Policy</button>.</span></div>
+              <button class="btn btn-primary form-submit" type="submit"><span class="form-submit-copy">Send enquiry<span class="form-estimate" id="formEstimate" aria-live="polite" hidden></span></span> <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></button>
+              <div class="form-error" id="formError" role="alert"></div>
+            </form>
+          </div>
+          <div class="form-success" id="formSuccess" role="status" tabindex="-1"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><use href="assets/icons/ui-sprite.svg#check"/></svg></span><h3>Your enquiry has been received!</h3><p>Our manager will contact you shortly to confirm the details.</p></div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-main">
+      <div>
+        <a class="brand" href="#top" aria-label="BOOP — home"><span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" fill="currentColor"><use href="assets/logos/pesvit-brand-paw.svg#mark"/></svg></span><span><span class="brand-name"><svg class="brand-wordmark" width="72" height="21" aria-hidden="true" viewBox="0 0 489 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M314.801 0.206055C356.577 0.425967 376.133 33.4101 375.864 71.9629C375.566 114.971 360.445 141.944 314.191 141.948C298.93 142.017 282.051 136.105 270.329 126.431C257.858 116.136 249.199 100.663 247.602 84.4453C245.517 64.9925 250.753 47.6914 260.492 31.0439C271.406 12.3827 287.927 2.75618 309.264 0.421875C310.55 0.155971 313.432 0.204352 314.801 0.206055ZM291.611 25.3457C290.972 25.1683 289.504 25.2518 288.83 25.2852C284.857 25.9054 281.324 27.6323 279.107 30.9658C272.035 41.607 276.914 51.9493 286.678 58.418C292.902 62.5402 296.587 63.4721 303.727 63.2588C308.43 62.4885 310.331 61.1824 313.182 57.4639C324.6 42.5684 304.182 28.8434 291.611 25.3457Z" fill="currentColor"/>
+<path d="M178.515 0.207031C219.91 0.0111368 240.264 34.6705 239.742 72.502C239.155 114.827 223.453 141.847 178.389 141.95C163.516 142.05 146.462 136.597 134.842 127.278C121.599 116.797 113.142 101.414 111.386 84.6113C109.016 62.7608 116.342 39.3087 130.129 22.2539C140.816 9.03346 156.044 2.21364 172.704 0.420898C174.022 0.146533 177.089 0.213761 178.515 0.207031ZM208.676 30.458C206.06 27.9622 201.165 25.8755 197.506 26.2744C189.494 27.9458 179.832 34.1552 175.198 40.8799C170.021 48.3921 173.861 54.7126 180.714 58.9697C183.732 60.8445 186.117 61.2779 189.645 61.376C197.251 61.245 202.583 58.4951 208.025 53.248C214.57 46.939 215.575 36.8879 208.676 30.458Z" fill="currentColor"/>
+<path d="M32.4255 0.419922C38.1317 -0.774215 50.0734 0.828479 55.9207 2.10742C66.9098 4.51118 75.6095 8.96421 81.9929 18.4482C91.2897 32.2605 91.4422 57.4371 75.9812 66.8896C87.4022 67.8795 96.4382 73.9264 100.861 84.6074C109.676 105.896 106.728 128.006 83.9763 138.212C77.959 140.652 71.8449 140.004 65.4519 140.005L42.364 139.999L22.2703 140.023C18.761 140.031 14.7561 140.189 11.3025 139.892C4.85013 139.336 2.70755 130.961 2.19409 125.729C1.30656 116.685 1.79662 107.58 2.1394 98.543C2.60659 88.4833 2.79891 78.4129 2.71655 68.3428C2.6409 62.5809 2.36696 56.8228 1.89526 51.0801C1.18453 42.6767 0.115093 34.4186 0.885498 25.9727C2.50708 8.1945 16.8939 2.10441 32.4255 0.419922ZM69.1013 101.311C66.7587 94.8122 55.6016 91.497 49.3826 92.2178C34.0074 97.1041 41.532 117.762 61.2 113.099C64.4162 111.965 67.2875 110.213 68.8142 107.006C69.6665 105.222 69.7699 103.171 69.1013 101.311ZM56.2312 27.6094C53.7973 25.4533 49.1292 24.2676 45.8445 24.5635C42.135 24.8952 39.3158 25.7046 36.7751 28.7295C35.0886 30.7135 34.2772 33.2972 34.5261 35.8896C35.2065 43.2884 42.1524 46.8544 48.9441 46.7676C58.8892 45.7514 64.3513 34.8022 56.2312 27.6094Z" fill="currentColor"/>
+<path d="M426.315 0.193359C439.122 -0.102358 448.323 -0.0609643 460.836 3.97852C487.681 12.6466 492.823 39.4232 485.208 63.8877C482.313 73.1924 478.999 78.0517 472.344 84.8975C459.227 98.3899 442.452 96.0835 425.67 92.4941C419.387 91.1101 414.825 89.3505 415.412 97.8281C415.894 104.82 417.745 108.875 420.979 114.973C423.531 119.355 426.073 123.809 428.297 128.376C429.581 131.007 430.675 135.778 428.424 138.216C427.029 139.727 424.424 140.021 422.458 140.032C415.752 140.07 409.02 139.978 402.311 139.976C399.254 139.864 395.935 140.291 392.91 139.953C388.323 139.44 386.407 133.478 385.877 129.726C385.047 123.837 385.23 117.769 385.397 111.872C385.636 103.362 386.128 94.8621 386.87 86.3818C387.561 78.1223 388.514 69.3425 388.596 61.0977C388.646 55.9062 388.867 49.648 388.474 44.5703C387.917 39.1461 387.121 33.8445 386.823 28.3906C385.574 5.59878 408.026 0.647566 426.315 0.193359ZM454.747 50.8037C459.692 36.0233 443.823 31.7766 432.8 32.791C426.817 34.3998 426.001 37.6796 425.984 43.3564C425.949 56.8964 434.955 60.7692 446.911 57.209C447.03 57.1737 447.149 57.1379 447.266 57.1006C450.179 55.9689 453.694 53.9446 454.747 50.8037Z" fill="currentColor"/>
+</svg>
+</span></span></a>
+      </div>
+      <p>Until next time, and many happy tail wags.</p>
+      <div class="footer-socials" role="group" aria-label="Social media">
+        <span class="social-icon" role="img" aria-label="Telegram"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><use href="assets/icons/ui-sprite.svg#telegram"/></svg></span>
+        <span class="social-icon" role="img" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><use href="assets/icons/ui-sprite.svg#instagram-filled"/></svg></span>
+        <span class="social-icon" role="img" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><use href="assets/icons/ui-sprite.svg#facebook"/></svg></span>
+      </div>
+    </div>
+  </footer>
+  <div class="mobile-sticky hidden" id="mobileSticky" aria-hidden="true" inert><a class="btn btn-primary" href="#contact">Check dates <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><use href="assets/icons/ui-sprite.svg#arrow-right"/></svg></a></div>
+  <dialog class="privacy-dialog" id="privacyDialog" aria-labelledby="privacyTitle">
+    <div class="privacy-dialog-head"><h2 id="privacyTitle">Privacy Policy</h2><button class="round-btn" id="closePrivacy" type="button" aria-label="Close Privacy Policy" autofocus><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+    <div class="privacy-content">
+      <h3>About this website</h3><p>BOOP is a dog hotel portfolio concept. This page does not accept bookings or send enquiries to a team. The contact details shown are examples.</p>
+      <h3>Details you enter</h3><p>The form uses the care option, dates, names, phone number and optional notes you enter to check the fields and show a confirmation on this page. These details are not sent to a server or saved by this website in browser storage. Your browser may remember entries according to its own autofill settings.</p>
+      <h3>Page delivery and analytics</h3><p>Opening this website loads its pages, fonts, images and video from the hosting service. That service may process technical request information to deliver and protect the website. This page has no analytics tags or advertising pixels.</p>
+      <h3>Before entering information</h3><p>Please use sample details when trying the form and avoid entering sensitive information. For questions about this project, contact its owner through the platform where it was shared.</p>
+    </div>
+  </dialog>
+  <script src="scripts/site.js"></script>
+</body>
+</html>
